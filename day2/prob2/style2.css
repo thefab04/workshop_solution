@@ -1,0 +1,88 @@
+/* Global Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #000000;
+}
+
+/* Container Styling */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(79, 9, 230, 0.1);
+}
+
+/* Header Styling */
+header h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 3.5em;
+    color: hsl(52, 100%, 51%);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Menu Section Styling */
+.menu-section {
+    margin-bottom: 20px;
+    border-bottom: 20px solid #eee;
+    padding-bottom: 20px;
+}
+
+.menu-section h2 {
+    font-size: 2em;
+    color: #ffd500;
+    margin-bottom: 20px;
+}
+
+/* Menu Item Styling */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-item:hover {
+    background-color: #f1f1f1;
+}
+
+.item-name {
+    font-weight: 700;
+}
+
+.item-price {
+    font-weight: 400;
+    color: #777;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 40px;
+    }
+
+    header h1 {
+        font-size: 3%;
+    }
+
+    .menu-section h2 {
+        font-size: 1.5em;
+    }
+
+    .menu-item {
+        font-size: 1em;
+    }
+}
