@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fab-Chudidar</title>
+</head>
+
+<style>
+
+    body{
+        height: 170vh;
+        width: 30vw;
+        display: grid;
+        justify-content: center;
+        background-color: white;
+        outline: auto;
+    }
+    header{
+        text-decoration: underline;
+        text-align: center;
+        text-emphasis-color: blue;
+        background-color: gray;
+        outline: auto;
+        margin-top: 10px;
+    }
+
+        
+    .item1{
+        height: 300px;
+        width: 150px;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 20px;
+        flex: auto;
+        flex-direction: row;
+    }
+    .item2{
+        height: 300px;
+        width: 150px;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 20px;
+        flex-direction: row;
+        
+    }
+    /*add to cart button */
+    .button {
+            background-color: gray;
+            color: rgb(0, 0, 0);
+            padding: 10px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: rgb(255, 234, 0); 
+        }
+</style>
+
+<script>
+    function callalert(msg){
+        alert(
+            msg
+        )
+    }
+</script>
+
+
+<body>
+    <header>
+    <h1>Chudidhar</h1>
+    </header>
+
+    <div>
+        <div class="item1">
+            <img src="chudi1.jpg" height="150px"> 
+            <h5>Kanchipuram silk</h5>
+            <h6>Designed with ancient symbols </h6>
+            <h6>price = ₹1799/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+
+        <div class="item2">
+            <img src="chudi2.jpg" height="150px"> 
+            <h5> Mysore silks </h5>
+            <h6>Light weight cotton saree </h6>
+            <h6>price = ₹1599/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+    </div>
+
+
+</body>
+</html>

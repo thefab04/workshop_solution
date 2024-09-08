@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fab</title>
+    
+</head>
+
+
+<style>
+body{
+    height: 5vh;
+    width: 97vw;
+   background-image: url(background.jpg);
+    outline: auto;
+}
+
+.upper{
+    align-items: center;
+    text-align: center;
+    text-decoration: solid ;
+}
+
+.main{
+    margin: 0;
+    padding: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    padding-bottom: 10px;
+}
+.men{
+    margin-left: 10px;
+    outline: ;
+}
+
+
+button {
+padding: 5px 5px;
+border: unset;
+border-radius: 15px;
+ color: #212121;
+ z-index: 1;
+ background: #e8e8e8;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+button::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #928a8a;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+button:hover {
+ color: #e8e8e8;
+}
+
+button:hover::before {
+ width: 100%;
+}
+
+#head{
+    text-shadow: #e8e8e8;
+    font-size: 40px;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-stretch: expanded;
+    color: black;
+}
+
+#main_head{
+    color: rgb(0, 0, 0) ;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-underline-offset: 10px;
+}
+
+#sub_head{
+    color: rgb(0, 0, 0) ;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-underline-offset: 10px;
+}
+
+
+
+</style>
+<body>
+
+    <div class="upper">
+    <header id="head">THE FAB COLLECTIONS</header>
+    <img src="fab_logo_final.png"  height="150px"><br>
+    </div>
+
+    <div class="main">
+        <h4 id="main_head">Categories</h4>
+        <h3 id="sub_head"><menu>Mens</menu>
+        
+            <div class="men">
+            <button><a href="shirt.html">Shirts</a></button>
+            
+            <button><a href="jeans.html">Jeans</a></button>
+            
+            <button><a href="cargo.html">cargo</a></button>
+            
+            <button><a href="tshirt.html">T-shirts</a></button>
+            </div>
+        
+
+        <menu id="sub_head">Womens</menu>
+        <div class="women">
+            <button><a href="saree.html">Saares</a></button>
+            
+            <button><a href="chudi.html">Chudidhar</a></button>
+            
+            <button><a href="kurti.html">   kurtis   </a></button>
+        </div>
+    </div>
+
+
+</body>
+</html>

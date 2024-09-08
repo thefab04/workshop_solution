@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fab-jeans</title>
+</head>
+
+<style>
+
+    body{
+        height: 300vh;
+        width: 30vw;
+        display: grid;
+        justify-content: center;
+        background-color: white;
+        outline: auto;
+        
+    
+    }
+    header{
+        text-decoration: underline;
+        text-align: center;
+        text-emphasis-color: blue;
+        background-color: gray;
+        outline: auto;
+        margin-top: 10px;
+    }
+
+    .item1{
+        height: 300px;
+        width: 150px;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 20px;
+        flex: auto;
+        flex-direction: row;
+    }
+    .item2{
+        height: 300px;
+        width: 150px;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 20px;
+        flex-direction: row;
+        
+    }
+    .item3{
+        height: 300px;
+        width: 150px;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .item4{
+        height: 300px;
+        width: 150px;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /*add to cart button */
+    .button {
+            background-color: gray;
+            color: rgb(0, 0, 0);
+            padding: 10px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: rgb(255, 234, 0); 
+        }
+</style>
+
+<script>
+    function callalert(msg){
+        alert(
+            msg
+        )
+    }
+</script>
+
+<body>
+    <header>
+    <h1>Jeans</h1>
+    </header>
+
+    <div class="item">
+        <div class="item1">
+            <img src="jean1.jpg" height="150px"> 
+            <h5>U.S.POLO</h5>
+            <h6>Men's Baggy jeans</h6>
+            <h6>price = ₹799/-</h6>
+
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+
+        <div  class="item2">
+            <img src="jean2.jpg" height="150px"> 
+            <h5> H&M</h5>
+            <h6>Men's slim fit jean</h6>
+            <h6>price = ₹599/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+
+        <div  class="item3">
+            <img src="jean3.jpg" height="150px"> 
+            <h5>PETER ENGLAND</h5>
+            <h6>Men's normal jean</h6>
+            <h6>price = ₹999/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+
+        <div  class="item4">
+            <img src="jean4.jpg" height="150px"> 
+            <h5>ZARA</h5>
+            <h6>Textered Men's cargo jean</h6>
+            <h6>price = ₹1999/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+    </div>
+
+
+</body>
+</html>

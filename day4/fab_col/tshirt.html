@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fab-Tshirt</title>
+</head>
+
+<style>
+
+    body{
+        height: 170vh;
+        width: 30vw;
+        display: grid;
+        justify-content: center;
+        background-color: white;
+        outline: auto;
+    }
+    header{
+        text-decoration: underline;
+        text-align: center;
+        text-emphasis-color: blue;
+        background-color: gray;
+        outline: auto;
+        margin-top: 10px;
+    }
+
+        
+    .item1{
+        height: 300px;
+        width: 150px;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 20px;
+        flex: auto;
+        flex-direction: row;
+    }
+    .item2{
+        height: 300px;
+        width: 150px;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 20px;
+        flex-direction: row;
+        
+    }
+    /*add to cart button */
+    .button {
+            background-color: gray;
+            color: rgb(0, 0, 0);
+            padding: 10px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: rgb(255, 234, 0); 
+        }
+</style>
+
+<script>
+    function callalert(msg){
+        alert(
+            msg
+        )
+    }
+</script>
+
+
+<body>
+    <header>
+    <h1>T-Shirts</h1>
+    </header>
+
+    <div>
+        <div class="item1">
+            <img src="tshirt1.jpg" height="150px"> 
+            <h5>U.S.POLO</h5>
+            <h6>Men'sregular fit T'shirt </h6>
+            <h6>price = ₹799/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+
+        <div class="item2">
+            <img src="tshirt2.jpg" height="150px"> 
+            <h5> H&M</h5>
+            <h6>Men's printed T-shirt</h6>
+            <h6>price = ₹599/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+    </div>
+
+
+</body>
+</html>

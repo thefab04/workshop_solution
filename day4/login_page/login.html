@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login_page</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: 0;
+        font-family:'Poppins',sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: rgb(218, 192, 192);
+    }
+    .login_box{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 200px;
+        height: 480px;
+        padding: 30px;
+    }
+
+    .login_header{
+        text-align: center;
+        margin: 20px;
+        font-size: 30px;
+    }
+
+    .input_box .input_feild{
+        width: 90%;
+        height: 30px;
+        font-size: 17px;
+        padding:0 25px;
+        margin-bottom: 35px;
+        border: none;   
+        transition: .3s; 
+
+}
+
+..input_box:hover {
+    color: #007BFF;
+}
+
+
+.forgot{
+    display: flex;
+    font-size: 10px;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.check{
+    margin-right: 10px;
+}
+
+.submit{
+    width: 100px;
+    height: 25px;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+    align-items: center;
+    margin-left: 30px;
+}
+.submit:hover{
+    color: rgb(240, 14, 14);
+    
+    
+}
+</style>
+
+
+<body>
+    <div class="login_box">
+        <div class="login_header">
+            <header>Login</header>
+        </div>
+
+        <div class="input_box">
+            <input type="text" class="input_feild" placeholder="Email" autocomplete="off" required>
+        </div>
+
+        <div class="input_box">
+            <input type="password" class="input_feild" placeholder="password" autocomplete="off" required>
+        </div>
+
+        <div class="forgot">
+            <section>
+                <input type="checkbox" id="check">
+                <label for="check">Remember me</label>
+            </section>
+
+            <section>
+                <a href="#">Forgot password</a>
+            </section>
+        </div>
+
+        <div class="submit">
+            <button class="submit" id="submit">submit</button>
+            
+        </div>
+
+
+    </div>
+</body>
+</html>
