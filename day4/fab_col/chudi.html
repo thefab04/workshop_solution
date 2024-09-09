@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fab-Chudidar</title>
-</head>
-
+</head>3
 <style>
 
     body{
-        height: 170vh;
-        width: 30vw;
+        height: 140vh;
+        width: 97vw;
         display: grid;
         justify-content: center;
         background-color: white;
         outline: auto;
     }
     header{
-        text-decoration: underline;
         text-align: center;
-        text-emphasis-color: blue;
-        background-color: gray;
-        outline: auto;
-        margin-top: 10px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 40px;
+        color: black;
+        text-decoration: underline;
+    }
+    
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 3 cards per row */
+        gap: 40px; /* Gap between the cards */
     }
 
+
         
-    .item1{
+
+    .item{
         height: 300px;
         width: 150px;
         border: 2px solid black;
@@ -34,6 +41,8 @@
         margin-top: 20px;
         flex: auto;
         flex-direction: row;
+        margin-left: 170px;
+        row-gap: 30px;
     }
     .item2{
         height: 300px;
@@ -75,8 +84,8 @@
     <h1>Chudidhar</h1>
     </header>
 
-    <div>
-        <div class="item1">
+    <div class="container"> 
+        <div class="item">
             <img src="chudi1.jpg" height="150px"> 
             <h5>Kanchipuram silk</h5>
             <h6>Designed with ancient symbols </h6>
@@ -84,7 +93,7 @@
             <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
         </div>
 
-        <div class="item2">
+        <div class="item">
             <img src="chudi2.jpg" height="150px"> 
             <h5> Mysore silks </h5>
             <h6>Light weight cotton saree </h6>

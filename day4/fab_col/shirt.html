@@ -9,8 +9,8 @@
 <style>
 
     body{
-        height: 330vh;
-        width: 30vw;
+        height: 120vh;
+        width: 97vw;
         display: grid;
         justify-content: center;
         background-color: white;
@@ -19,21 +19,27 @@
     
     }
     header{
-        text-decoration: underline;
         text-align: center;
-        text-emphasis-color: blue;
-        background-color: gray;
-        outline: auto;
-        margin-top: 10px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 90px;
+        color: black;
+        text-decoration: underline;
     }
-    .item1{
+    
+
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 3 cards per row */
+        gap: 40px; /* Gap between the cards */
+    }
+
+    .item{
         height: 330px;
         width: 150px;
         border: 2px solid black;
         text-align: center;
-        margin-top: 20px;
-        flex: auto;
-        flex-direction: row;
+        
     }
     .item2{
         height: 300px;
@@ -109,13 +115,13 @@
 <body>
 
     <header class="header">
-    <h1>Shirts</h1>
+    SHIRTS
     </header>
 
     
 
-    <div>
-        <div class="item1"> 
+    <section class="container">
+        <div class="item"> 
             <img src="shirt1.jpg" height="150px"> 
             <h5>U.S.POLO</h5>
             <h6>Men solid cotton blend shirt</h6>
@@ -123,7 +129,7 @@
             <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
         </div>
 
-        <div class="item2">
+        <div class="item">
             <img src="shirt2.jpg" height="150px" width="150px"> 
             <h5> H&M</h5>
             <h6>Men lycra designed shirt</h6>
@@ -131,7 +137,7 @@
             <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
         </div>
 
-        <div class="item3">
+        <div class="item">
             <img src="shirt3.jpg" height="150px"> 
             <h5>PETER ENGLAND</h5>
             <h6>Men's slim fit shirt</h6>
@@ -139,14 +145,14 @@
             <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
         </div>
 
-        <div class="item4">
+        <div class="item">
             <img src="shirt4.jpg" height="150px" width="150px"> 
             <h5>ZARA</h5>
             <h6>Textered Men's shirt</h6>
             <h6>price = ₹1999/-</h6>
             <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
         </div>
-    </div>
+    </section>
 
 </body>
 </html>

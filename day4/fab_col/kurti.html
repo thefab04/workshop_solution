@@ -9,21 +9,27 @@
 <style>
 
     body{
-        height: 170vh;
-        width: 30vw;
+        height: 130vh;
+        width: 97vw;
         display: grid;
         justify-content: center;
         background-color: white;
         outline: auto;
     }
     header{
-        text-decoration: underline;
         text-align: center;
-        text-emphasis-color: blue;
-        background-color: gray;
-        outline: auto;
-        margin-top: 20px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 90px;
+        color: black;
+        text-decoration: underline;
     }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 3 cards per row */
+        gap: 40px; /* Gap between the cards */
+    }
+
 
         
     .item1{
@@ -71,10 +77,10 @@
 
 <body>
     <header>
-    <h1>Kurti's</h1>
+    Kurti's
     </header>
 
-    <div>
+    <section class="container">
         <div class="item1">
             <img src="kurti1.jpg" height="150px" width="150px"> 
             <h5>Kanchipuram silk</h5>
@@ -90,7 +96,23 @@
             <h6>price = ₹1599/-</h6>
             <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
         </div>
-    </div>
+
+        <div class="item2">
+            <img src="kurti2.jpg" height="150px" width="150px"> 
+            <h5> Mysore silks </h5>
+            <h6>Light weight cotton saree </h6>
+            <h6>price = ₹1599/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+
+        <div class="item2">
+            <img src="kurti2.jpg" height="150px" width="150px"> 
+            <h5> Mysore silks </h5>
+            <h6>Light weight cotton saree </h6>
+            <h6>price = ₹1599/-</h6>
+            <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
+        </div>
+    </section>
 
 
 </body>

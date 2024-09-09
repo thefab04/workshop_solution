@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fab-jeans</title>
+    <link rel="stylesheet" href="">
 </head>
 
 <style>
 
     body{
-        height: 300vh;
-        width: 30vw;
+        height: 120vh;
+        width: 97vw;
         display: grid;
         justify-content: center;
         background-color: white;
@@ -19,22 +20,25 @@
     
     }
     header{
-        text-decoration: underline;
         text-align: center;
-        text-emphasis-color: blue;
-        background-color: gray;
-        outline: auto;
-        margin-top: 10px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 50px;
+        color: black;
+        text-decoration: underline;
     }
-
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 3 cards per row */
+        gap: 40px; /* Gap between the cards */
+    }
     .item1{
         height: 300px;
         width: 150px;
         border: 2px solid black;
-        text-align: center;
+        text-align:center;
         margin-top: 20px;
-        flex: auto;
-        flex-direction: row;
+
     }
     .item2{
         height: 300px;
@@ -87,10 +91,10 @@
 
 <body>
     <header>
-    <h1>Jeans</h1>
+    Jeans
     </header>
 
-    <div class="item">
+<section class="container">
         <div class="item1">
             <img src="jean1.jpg" height="150px"> 
             <h5>U.S.POLO</h5>
@@ -123,7 +127,7 @@
             <h6>price = ₹1999/-</h6>
             <button class="button" onclick="callalert('Added to Cart')">Add to Cart</button>
         </div>
-    </div>
+    </section>
 
 
 </body>
