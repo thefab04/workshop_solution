@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="icon" href="logo/icon.png">
+</head>
+
+<style>
+
+    #logo{
+        align-items: center;
+        margin-left: 625px;
+        margin-bottom: px;
+    }
+
+a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background-color: #000000;
+  transition: 0.3s ease-in-out;
+  transform: scaleY(1);
+}
+
+a:hover::before {
+  transform: scaleY(0);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: -2px;
+  height: calc(100% + 4px);
+  width: calc(100% - 12px);
+  background-color: #000000;
+  transition: 0.3s ease-in-out;
+  transform: scaleX(1);
+  transition-delay: 0.5s;
+}
+
+a:hover::after {
+  transform: scaleX(0);
+}
+
+a span {
+  position: relative;
+  z-index: 3;
+}
+
+.button1 {
+  background-color: none;
+  text-decoration: none;
+  background-color:transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  margin-left: 650px;
+  text-align: center;
+
+}
+.button2 {
+  background-color: none;
+  text-decoration: none;
+  background-color:transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  margin-left: 520px;
+  text-align: center;
+
+}
+
+
+
+    .quote{
+        color:#800020;
+        stroke: aliceblue;
+        stroke-width: 5px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align:center;
+        opacity: 80%;
+        font-style: oblique;
+        font-stretch:expanded;
+        font-size: 150px;
+        margin-top: 10px;
+    }
+    
+    .quote2{
+        color:#800020;
+        stroke: aliceblue;
+        stroke-width: 5px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align:center;
+        opacity: 90%;
+        font-style: oblique;
+        font-stretch:expanded;
+        font-size: 100px;
+        margin-top: 10px;
+        margin: 50px;
+    }
+
+
+    #budhha{
+      color:#ffffff;
+        stroke: aliceblue;
+        stroke-width: 5px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align:center;
+        opacity: 80%;
+        font-style: oblique;
+        font-stretch:expanded;
+        font-size: 80px;
+    }
+
+.container {
+  height: 650px;
+  width:1050px;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 10px 20px #dbdbdb75;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  outline:black solid;
+  justify-content: center;
+  align-items: center;
+  margin-left: 440px;
+  margin-bottom: 190px;
+}
+
+.palette {
+  display: flex;
+  height: 86%;
+  width: 100%;
+  outline: black  ;
+}
+
+.color1 {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: flex 0.1s linear;
+  font-size: 50px;
+}
+
+.color2 {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #800020;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 50px;
+  transition: flex 0.1s linear;
+}
+
+.color1 span {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  writing-mode: vertical-lr;
+}
+
+.color2 span {
+  opacity: 0;
+  writing-mode: vertical-lr;
+  transition: opacity 0.1s linear;
+}
+
+
+.color1:nth-child(1) {
+  background:#80002095;
+}
+
+.color2:nth-child(2) {
+  background: #000000;
+}
+
+.color1:nth-child(3) {
+  background:  #80002095;
+}
+
+.color2:nth-child(4) {
+  background: #000000;
+}
+
+.color1:nth-child(5) {
+  background:  #80002095;
+}
+.color2:nth-child(6) {
+  background: #000000;
+}
+.color1:nth-child(7) {
+  background:#80002095;
+}
+
+.color1:hover {
+  flex: 2;
+  opacity: 1;
+  box-shadow: #800020(250, 247, 247) 0px 7px 29px 0px;
+}
+.color2:hover {
+  flex: 2;
+  box-shadow:#000000(250, 247, 247) 0px 7px 29px 0px;
+}
+
+
+.color1:hover span {
+  opacity: 1;
+}
+.color2:hover span {
+  opacity: 1;
+}
+
+#stats {
+  height: 14%;
+  width: 100%;
+  background:rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  box-sizing: border-box;
+  color: #ffffff;
+  letter-spacing: 68px;
+  margin-left: 39px;
+  font-size: 20px;
+}
+
+#stats svg {
+  fill: #ffffff;
+  transform: scale(1.2);
+}
+
+.explain{
+  color:white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  flex-wrap: wrap;
+  margin-top: 90px;
+  font-size: 35px;
+  margin-left: -200px;
+  justify-content:right;
+  opacity: 80%;
+
+}
+
+.row{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 100%;
+  display: grid;
+  place-items: left;
+
+}
+
+.focus{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap:10px;
+  opacity: 80%;
+  
+}
+
+.image1{
+  margin-left: 160px;
+  margin-top: 40px;
+}
+
+
+
+
+
+
+
+</style>
+
+
+<body background="main_assets/final_background.png">
+
+    <div id="logo">
+        <img src="logo/logopng.png"  height="700px" width="auto">
+    </div>
+
+    <div class="quote">
+        <b>"EVERY HUMAN BEING IS THE AUTHOR OF HIS OWN HEALTH OR DISEASE"<br></b>
+        <p id="budhha">-Buddha</p>
+    </div>
+
+    <div class="container">
+        <div class="palette">
+          <div class="color1"><span>FOCUS</span></div>
+          <div class="color2"><span>INTENSITY</span></div>
+          <div class="color1"><span>TENACITY</span></div>
+          <div class="color2"><span>NUTRITION</span></div>
+          <div class="color1"><span>ENDURANCE</span></div>
+          <div class="color2"><span>STOIC</span></div>
+          <div class="color1"><span>SELF-DISCIPLINE</span></div>
+        </div>
+        <div id="stats">
+          <span>F   I   T   N   E   S   S</span>
+        </div>
+    </div>
+
+
+    <div class="main">
+
+      <div class="focus">
+          <div class="image1">
+              <img src="gym captions/focus.jpg" height="400px">
+          </div>
+          <p class="explain">Focus in fitness is key to achieving specific goals. It involves dedicating attention and consistency to your workouts, nutrition, and recovery. By setting clear objectives and minimizing distractions, you can maximize progress. Staying present during exercises enhances form and effectiveness. Ultimately, focus leads to sustainable improvements and long-term success.</p>
+      </div>
+
+      <div class="focus">
+        <div class="image1">
+            <img src="gym captions/intensity.jpg" height="400px">
+        </div>
+        <p class="explain"> Intensity refers to the level of effort or exertion applied during physical activity. It determines how hard the body is working and can vary across different exercises or workouts. High-intensity workouts push the body closer to its maximum capacity, such as sprinting or lifting heavy weights, while low-intensity activities are more moderate, like walking or light cycling. Intensity is crucial for improving endurance, strength, and cardiovascular health. It is often measured through heart rate, perceived exertion, or the amount of weight lifted during resistance training. Increasing intensity over time helps boost performance and achieve fitness goals faster.</p>
+    </div>
+
+    <div class="focus">
+      <div class="image1">
+          <img src="gym captions/tenacity.png" height="400px">
+      </div>
+      <p class="explain">Tenacity refers to the persistence and determination to continue working towards one’s goals, even in the face of challenges, setbacks, or fatigue. It’s the mental toughness that keeps an individual consistent with their workout routine, diet, and overall lifestyle changes necessary for progress. Tenacity is what drives someone to push through difficult workouts, recover from injuries, and remain focused on long-term results. This quality helps individuals overcome plateaus and maintain motivation, especially during periods when progress may feel slow. In fitness, tenacity is key to achieving sustained success and improvement.</p>
+  </div>
+
+  <div class="focus">
+    <div class="image1">
+        <img src="gym captions/NUTRITION.png" height="400px">
+    </div>
+    <p class="explain">Nutrition refers to the intake of essential nutrients that fuel the body and support physical performance, recovery, and overall health. Proper nutrition ensures the body gets the right balance of macronutrients (carbohydrates, proteins, and fats) for energy, muscle repair, and endurance. Micronutrients, such as vitamins and minerals, are also critical for metabolism and immune function. A well-balanced diet helps improve workout effectiveness, speed recovery, and reduce the risk of injury or fatigue. Tailoring nutrition to individual fitness goals, such as muscle gain or fat loss, can optimize results and long-term health.</p>
+</div>
+
+<div class="focus">
+  <div class="image1">
+      <img src="gym captions/ENDURANCE.png" height="400px">
+  </div>
+  <p class="explain">Endurance refers to the ability of the body to sustain physical activity over an extended period without fatigue. It is often divided into two types: cardiovascular endurance, which involves the heart and lungs supplying oxygen to muscles during activities like running or cycling, and muscular endurance, which is the ability of muscles to perform repeated actions, such as in resistance training or bodyweight exercises. Endurance training helps improve stamina, allowing individuals to perform longer workouts or athletic activities with less fatigue. Building endurance is key for overall fitness, promoting better heart health, lung capacity, and muscular efficiency.</p>
+</div>
+
+<div class="focus">
+  <div class="image1">
+      <img src="gym captions/stoic.jpg" height="400px">
+  </div>
+  <p class="explain">Stoic refers to maintaining a calm, resilient mindset in the face of physical challenges or discomfort. A stoic approach means embracing the difficulty of a workout without complaining or giving in to pain or fatigue. It involves focusing on long-term goals, staying disciplined, and not being swayed by temporary discomfort or setbacks. This mental toughness helps in pushing through hard workouts, staying consistent with a routine, and recovering from injuries or failures with patience. Stoicism in fitness is about controlling emotions, enduring challenges, and maintaining focus on progress and growth.</p>
+</div>
+
+<div class="focus">
+  <div class="image1">
+      <img src="gym captions/disipline.jpg" height="400px">
+  </div>
+  <p class="explain">Self-discipline refers to the ability to consistently follow a workout routine and maintain healthy habits, even when motivation is low. It involves making decisions that align with long-term fitness goals, such as exercising regularly, sticking to a balanced diet, and resisting temptations like unhealthy foods or skipping workouts. Self-discipline helps individuals overcome excuses and push through challenges, ensuring steady progress. It's a key factor in building strength, endurance, and achieving overall fitness success. Developing self-discipline fosters a mindset of commitment and perseverance, which is essential for lasting results.</p>
+</div>
+
+    </div>
+  
+
+<!-- <div class="quote2"> 
+        TFFC DIET GUIDE
+</div>-->
+
+
+
+
+<button class="button1">
+  <a href="diet.html"><span>
+    <div class="quote2">
+       DIET GUIDE
+</div>
+
+  </span></a> 
+  </button>
+
+  <br>
+
+
+<!-- <div class="quote2"> 
+  TFFC WORKOUTS GUIDE
+</div>-->
+
+ <br>
+<button class="button2">
+  <a href="first.html"><span>
+    <div class="quote2">
+      WORKOUTS GUIDE
+</div>
+
+  </span></a> 
+  </button>
+
+
+
+
+</body>
+</html>

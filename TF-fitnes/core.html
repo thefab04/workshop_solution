@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>core</title>
+    <link rel="icon" href="logo/icon.png">
+</head>
+
+<style>
+
+
+.header{
+    background-color: #800020a2;
+    padding: 20px 20px;
+    margin: 20px;
+    height: 40px;
+    margin-top: 40px;
+    border-radius: 30px
+    
+    
+}
+#img{
+    float: right;
+    opacity: 80%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #fffdfdaa;
+    border-radius: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+    #header{
+    color:#800020;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 150px;
+}
+
+#subhead{
+    color:#800020;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 70px;
+    margin-left: 40px;
+}
+
+#subheadcard{
+    color:black;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 70px;
+    margin-left: 40px;
+}
+
+#para{
+    color:white;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 60%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 50px;
+    text-wrap:wrap;
+
+}
+
+.important{
+    color: white;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 60%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 28px;
+    padding-bottom: 30px;
+}
+
+
+.explain{
+    color:white;
+    opacity: 60%;
+    text-align:left;
+    margin-left: 25px;
+    float: right;
+    flex: 1;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+.explain p {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+
+.workouts{
+    margin-top: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 4px gray;
+}
+.image{
+    align-self: center;
+    background-repeat: no-repeat;
+    margin-left:80px;
+    flex-direction: row;
+    display: flex;
+    gap: 35px;
+}
+
+.card{
+
+    display: flex;
+    align-items: center;
+    border: 1px solid #800020; 
+    border-radius:10px;
+    padding: 10px;
+    max-width: 1860px;
+    
+}
+.section{
+    height: 3000px;
+    outline: 20px black solid;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 390px;
+  height: 554px;
+  perspective: 1000px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  writing-mode: vertical-rl;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.9);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, #800020 60%, rgba(255, 0, 0, 0.58) 88%,
+     rgb(43, 10, 231) 40%, rgba(0, 0, 0, 0.603) 48%);
+  color: rgb(0, 0, 0);
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+     bisque 40%, rgb(255, 185, 160) 78%);
+  color: white;
+  transform: rotateX(180deg);
+  
+}
+
+
+</style>
+
+
+<body  background="main_assets/final_background.png"></body>
+
+<div class="header">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">TF FITNESS</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="diet.html">DEIT</a></li>
+            <li><a href="first.html">WORKOUT'S GUIDE</a></li>
+            <!-- <li><a href="upper.html">UPPER BODY</a></li> 
+            <li><a href="lower.html">LOWER BODY</a></li>
+            <li><a href="core.html">CORE</a></li>-->
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</div>
+
+
+    <h1 id="header"> CORE WORKOUTS</h1><br>
+    <img src="main_assets/abs.png" height="350px" id="img">
+
+    <!-- <h3 id="subhead">Lower body workouts</h3> -->
+    <P id="para">Core workouts focus on exercises that target the muscles in the abdomen, lower back, hips, and pelvis. These exercises aim to strengthen the muscles that support and stabilize the spine and torso, including the rectus abdominis, obliques, transverse abdominis, and lower back muscles. Common core exercises include planks, crunches, leg raises, and Russian twists. The goal is to enhance core stability, strength, and endurance.</P>
+
+    <h4 id="subhead">Importance</h4>
+    <div class="important">
+1.	Improves Stability and Balance: A strong core enhances stability and balance, which is essential for performing various physical activities and daily tasks safely. <br>
+2.	Supports Good Posture: Strengthening the core helps maintain proper spinal alignment, reducing the risk of poor posture and related back pain.<br>
+3.	Enhances Athletic Performance: A strong core contributes to better performance in sports and exercises by providing a stable base for movement and improving power transfer.<br>
+4.	Reduces Risk of Injury: Core strength helps protect the spine and reduce the risk of injuries, particularly in the lower back, by stabilizing and supporting the torso during movements.<br>
+5.	Improves Functional Strength: A strong core aids in the execution of everyday movements, such as lifting, bending, and twisting, making these actions more efficient and less prone to injury.<br>
+6.	Supports Overall Strength: Core workouts complement other exercise routines by providing a foundation of strength and stability, enhancing overall exercise effectiveness.<br>
+7.	Enhances Breathing: Core exercises improve diaphragmatic breathing and respiratory function by strengthening the muscles involved in breathing and supporting the ribcage.<br>
+8.	Improves Balance and Coordination: Core strength enhances overall balance and coordination, which is crucial for activities requiring precise movement and stability.<br>
+9.	Aids in Weight Management: Core workouts contribute to muscle tone and metabolic rate, aiding in weight management and fat loss.<br>
+10.	Promotes Functional Fitness: A strong core is essential for functional fitness, allowing for better performance in daily tasks and reducing the likelihood of strain or injury.<br>
+</div>
+
+<section class="workouts">
+
+<!-- first card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">BICYCLE CRUNCH</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/abs/Bicycle crunch.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>The bicycle crunch is a highly effective exercise for targeting the abdominal muscles, particularly the obliques, and enhancing core strength. </p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Bicycle Crunches
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Lie flat on your back on a mat with your hands placed behind your head. Lift your head, shoulders, and legs off the ground, and bend your knees to form a 90-degree angle.</li>
+                        
+                    </ul>
+
+                    <li><h4>MOVEMENT</h4></li>
+                    <ul>
+                        <li>Bring your right elbow towards your left knee while extending your right leg out straight.</li>
+                        <li>As you bring your elbow and knee together, twist your torso to engage your obliques.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you twist and bring your elbow towards your knee, and inhale as you return to the starting position</li>
+                        
+                    </ul>
+
+                    <li><h4>REPETITIONS</h4></li>
+                    <ul>
+                        <li>Perform the movement in a controlled, alternating manner for 15-20 repetitions per side, or as many as you can maintain with proper form</li>
+                        
+                    </ul>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- SECOND card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">CABLE CRUNCH</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/abs/cable crunch.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+            <p>The cable crunch is a strength training exercise that targets the abdominal muscles, particularly the rectus abdominis (the "six-pack" muscles), by utilizing resistance from a cable machine. This exercise is highly effective for building core strength and adding definition to the abs</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Cable Crunches
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Attach a rope handle to a high pulley on a cable machine.</li>
+                        <li>Kneel in front of the machine and grab the rope with both hands, placing your hands on either side of your head or near your forehead.</li>
+                    </ul>
+
+                    <li><h4>MOVEMENT</h4></li>
+                    <ul>
+                        <li>Keeping your hips stationary, contract your abs and curl your torso down toward the floor, bringing your elbows toward your thighs.</li>
+                        <li>Focus on using your core muscles to drive the movement rather than your arms or hips.</li>
+                        <li>Hold the contraction at the bottom of the movement for a brief second, squeezing your abs.</li>
+                        <li>Slowly return to the starting position by extending your torso back up, maintaining control of the cable resistance.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you crunch downward and engage your abs.</li>
+                        <li>Inhale as you return to the starting position.</li>
+                    </ul>
+
+                    <li><h4>REPETITIONS</h4></li>
+                    <ul>
+                        <li>Aim for 10-15 controlled reps per set, depending on your fitness level and resistance</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- third card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">CRUNCHES</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/abs/crunches.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Crunches are a popular and effective bodyweight exercise that primarily targets the abdominal muscles, specifically the rectus abdominis (the "six-pack" muscles). They are commonly used in core workouts to improve abdominal strength and endurance</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Crunches
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Lie flat on your back on a mat or exercise surface.</li>
+                        <li>Bend your knees and place your feet flat on the ground, about hip-width apart.</li>
+                        <li>Place your hands behind your head or across your chest. Avoid pulling on your neck if your hands are behind your head.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Engage your core by pulling your belly button towards your spine.</li>
+                        <li>Lift your head, shoulders, and upper back off the ground, curling your torso towards your knees.</li>
+                        <li>Keep your lower back pressed into the mat and avoid using your arms or neck to lift your torso.</li>
+                        <li>Squeeze your abdominal muscles at the top of the movement for a brief pause.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower your upper body back to the mat, maintaining control and keeping your core engaged.</li>
+                        <li>Avoid letting your shoulders touch the ground before starting the next repetition to keep tension on the abs.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you lift your torso and inhale as you return to the starting position.</li>
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- forth card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">HANGING KNEE RAISES</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/abs/Hanging Knee Raise.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Hanging knee raises are an effective core exercise that targets the abdominal muscles, particularly the lower abs, and also engages the hip flexors. They are performed while hanging from a bar, which also helps to improve grip strength and shoulder stability</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Hanging Knee Raises
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Find a sturdy pull-up or chin-up bar. Grip the bar with your hands shoulder-width apart and allow your body to hang with your arms fully extended.</li>
+                        <li>Keep your legs straight and slightly bent at the knees. Engage your core and keep your shoulders down and away from your ears.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Begin the movement by lifting your knees towards your chest. Focus on using your abdominal muscles to lift your legs, rather than swinging your body or using momentum.</li>
+                        <li>Raise your knees as high as possible, ideally bringing them towards your chest. Avoid rounding your lower back excessively.</li>
+                        <li>Squeeze your abs at the top of the movement for a brief pause.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower your legs back to the starting position, maintaining control and keeping tension in your core throughout the descent.</li>
+                        <li>Avoid letting your feet touch the ground or swinging your legs; keep the movement controlled and smooth.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you lift your knees and inhale as you lower them back down.</li>
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- fifth card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">MACHINE CRUNCHES</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/abs/Machine Crunch.jpeg" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Machine crunches are a core exercise performed using a specialized abdominal crunch machine. This exercise targets the rectus abdominis (the "six-pack" muscles) and can be a great way to isolate and strengthen the abdominal muscles with added resistance.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Machine Crunches
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Adjust the seat and the handle or pad height on the machine so that your knees are bent at a 90-degree angle when you sit on the seat, and your feet are flat on the floor.</li>
+                        <li>Position your upper body against the back pad and grip the handles (if available) or place your hands behind your head or across your chest.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Sit upright with your back against the pad and your core engaged. Make sure your feet are firmly planted on the floor and your knees are aligned with the machine’s pad or handles.</li>
+                        
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Engage your abdominal muscles and curl your torso towards your knees by flexing your spine.</li>
+                        <li>Use your abs to pull your upper body forward, aiming to bring your chest towards your knees. Avoid using your arms or shoulders to assist with the movement.</li>
+                        <li>Squeeze your abs at the peak of the crunch for a brief moment.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower your upper body back to the starting position in a controlled manner, maintaining tension in your abs throughout the descent.</li>
+                        <li>Avoid letting your shoulders relax completely or your back touch the pad fully before the next repetition.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you crunch forward and inhale as you return to the starting position.</li>
+                        <li></li>
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+</section>
+
+    
+</body>
+</html>

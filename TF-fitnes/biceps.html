@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biceps</title>
+    <link rel="icon" href="logo/icon.png">
+</head>
+
+<style>
+
+
+.header{
+    background-color: #800020a2;
+    padding: 20px 20px;
+    margin: 20px;
+    height: 40px;
+    margin-top: 40px;
+    border-radius: 30px
+    
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #fffdfdaa;
+    border-radius: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+    #header{
+    color:#800020;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 150px;
+}
+
+#subhead{
+    color:#800020;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 70px;
+    margin-left: 40px;
+}
+
+#subheadcard{
+    color:black;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 70px;
+    margin-left: 40px;
+}
+
+#para{
+    color:white;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 60%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 50px;
+    text-wrap:wrap;
+
+}
+
+.important{
+    color: white;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 60%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 28px;
+    padding-bottom: 30px;
+}
+
+
+.explain{
+    color:white;
+    opacity: 60%;
+    text-align:left;
+    margin-left: 25px;
+    float: right;
+    flex: 1;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+.explain p {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+
+.workouts{
+    margin-top: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 4px gray;
+}
+.image{
+    align-self: center;
+    background-repeat: no-repeat;
+    margin-left:80px;
+    flex-direction: row;
+    display: flex;
+    gap: 35px;
+}
+
+.card{
+
+    display: flex;
+    align-items: center;
+    border: 1px solid #800020; 
+    border-radius:10px;
+    padding: 10px;
+    max-width: 1860px;
+    
+}
+.section{
+    height: 3000px;
+    outline: 20px black solid;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 390px;
+  height: 554px;
+  perspective: 1000px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  writing-mode: vertical-rl;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.9);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, #800020 60%, rgba(255, 0, 0, 0.58) 88%,
+     rgb(43, 10, 231) 40%, rgba(0, 0, 0, 0.603) 48%);
+  color: rgb(0, 0, 0);
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+     bisque 40%, rgb(255, 185, 160) 78%);
+  color: white;
+  transform: rotateX(180deg);
+  
+}
+
+
+</style>
+
+<body  background="main_assets/final_background.png"></body>
+
+<div class="header">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">TF FITNESS</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="diet.html">DEIT</a></li>
+            <li><a href="upper.html">UPPER BODY</a></li>
+            <li><a href="lower.html">LOWER BODY</a></li>
+            <li><a href="core.html">CORE</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</div>
+
+
+    <h1 id="header"> UPPER BODY WORKOUTS</h1><br> 
+
+    
+    <h3 id="subhead">BICEPS WORKOUTS</h3> 
+    <p id="para">Barbell Curl is a classic exercise that focuses on developing the biceps, specifically targeting the biceps brachii. It is one of the most effective movements for building upper arm strength and muscle mass.</p>
+
+    <h4 id="subhead">Importance</h4>
+    <div class="important"> 
+1.Increases Arm Strength-Strengthens the biceps for better pulling and lifting power. <br>
+2.Enhances Arm Definition - Builds muscle size and definition for toned arms.<br>
+3.Improves Grip Strength - Biceps exercises improve grip, enhancing control during activities.<br>
+4.Supports Functional Movements - Essential for daily tasks like lifting, carrying, and pulling.<br>
+5.Improves Athletic Performance - Crucial for sports requiring strong arm movements, like climbing or rowing.<br>
+6.Boosts Overall Upper Body Strength - Works in conjunction with back and shoulder muscles for overall strength.<br>
+7.Promotes Symmetry - Balanced biceps development creates symmetry with triceps and forearms.<br>
+8.Aids in Injury Prevention - Strengthening the biceps reduces strain on the elbows and forearms.<br>
+9.Enhances Lifting Capacity - Strong biceps contribute to better performance in compound lifts like deadlifts.<br>
+10.Boosts Confidence - Well-developed biceps improve appearance and boost self-esteem.<br>
+    </div>
+
+    <div id="header">WORKOUTS</div>
+
+<section class="workouts">
+
+<!-- first card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">BARBELL CURL</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/biceps/barbell curl.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+            <p>Barbell Curl is a classic exercise that focuses on developing the biceps, specifically targeting the biceps brachii. It is one of the most effective movements for building upper arm strength and muscle mass.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Barbell Curls
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Stand with your feet shoulder-width apart and hold a barbell with an underhand grip (palms facing up). Your hands should be about shoulder-width apart on the bar.</li>
+                        
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Let your arms hang fully extended, with a slight bend in your elbows. Keep your back straight and your shoulders relaxed.</li>
+                        
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Curl the barbell up towards your chest by bending your elbows and contracting your biceps. Keep your upper arms stationary and avoid swinging the bar.</li>
+                        <li>Focus on squeezing the biceps at the top of the movement.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower the barbell back down to the starting position with control, fully extending your arms while maintaining tension in your biceps.</li>
+                        
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you curl the barbell up and inhale as you lower it back down.</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+
+<!-- second card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">CABLE CURL</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/biceps/cable curl.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+            <P>Cable Curls are a versatile biceps exercise that utilizes a cable machine to provide constant tension throughout the movement. This exercise effectively targets the biceps brachii and helps in developing both size and strength in the upper arms.</P>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Cable Curls
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Attach a straight bar or a handle to the low pulley on a cable machine.</li>
+                        <li>Stand facing the machine with your feet shoulder-width apart. Grip the bar or handle with an underhand grip (palms facing up).</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Step back slightly to create tension in the cable. Stand upright with your back straight and core engaged.</li>
+                        <li>Hold the bar or handle with your arms fully extended and your elbows close to your sides.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Curl the bar or handle towards your shoulders by bending your elbows and contracting your biceps.</li>
+                        <li>Keep your upper arms stationary and avoid swinging or using your shoulders to lift the weight.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower the bar or handle back to the starting position, fully extending your arms while maintaining tension in your biceps.</li>
+                        
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you curl the weight up and inhale as you lower it back down.</li>
+                        
+                    </ul>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- third card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">CONCENTRATION CURL</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/biceps/Concentration Curl.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Concentration Curls are a biceps exercise designed to isolate and intensify the contraction of the biceps brachii. This exercise is known for its effectiveness in building peak biceps strength and definition</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Concentration Curls:
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Sit on a bench with your legs spread apart. Hold a dumbbell in one hand.</li>
+                        <li>Place your elbow on the inside of your thigh, near the knee. Rest the back of your upper arm against your inner thigh to stabilize it.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>With your palm facing up, let the dumbbell hang down towards the floor, fully extending your arm.</li>
+                        <li>Keep your back straight and your torso stationary.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Curl the dumbbell up towards your shoulder by bending your elbow and contracting your biceps.</li>
+                        <li>Focus on the contraction of the biceps and avoid using your shoulders or torso to lift the weight.</li>
+                        <li>Squeeze your biceps at the top of the movement.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower the dumbbell back to the starting position, fully extending your arm while maintaining control.</li>
+                        
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you curl the dumbbell up and inhale as you lower it back down.</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- forth card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">DUMBBELL CURL</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="GIF/biceps/Dumbbell Curl.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Dumbbell Curls are a fundamental exercise for building the biceps. They are effective for developing arm strength, muscle mass, and definition. This exercise can be performed in various ways to target different parts of the biceps and forearms.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Dumbbell Curls
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Stand with your feet shoulder-width apart, or sit on a bench with your back straight.</li>
+                        <li>Hold a dumbbell in each hand with an underhand grip (palms facing up). Let your arms hang fully extended at your sides.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Keep your elbows close to your torso and your palms facing forward.</li>
+                        <li>Maintain a straight posture with your shoulders back and your core engaged.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Curl the dumbbells up towards your shoulders by bending your elbows and contracting your biceps.</li>
+                        <li>Keep your upper arms stationary and avoid swinging or using your shoulders to lift the weights.</li>
+                        <li>Squeeze your biceps at the top of the movement.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower the dumbbells back to the starting position, fully extending your arms while maintaining control.</li>
+                        
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you curl the weights up and inhale as you lower them back down.</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- fifth card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">HAMMER CURL</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/biceps/hammer curl.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Hammer Curls are a variation of the traditional biceps curl that primarily targets the brachialis and brachioradialis muscles in the forearms, in addition to the biceps brachii. This exercise is great for overall arm development and improving grip strength.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Hammer Curls
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Stand with your feet shoulder-width apart or sit on a bench with your back straight.</li>
+                        <li>Hold a dumbbell in each hand with a neutral grip (palms facing each other). Let your arms hang fully extended at your sides.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Keep your elbows close to your torso and your palms facing each other.</li>
+                        <li>Maintain a straight posture with your shoulders back and core engaged.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Curl the dumbbells up towards your shoulders by bending your elbows and contracting your biceps and forearms.</li>
+                        <li>Keep your upper arms stationary and avoid swinging or using your shoulders to lift the weights.</li>
+                        <li>Squeeze your biceps and forearms at the top of the movement.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower the dumbbells back to the starting position, fully extending your arms while maintaining control.</li>
+                        
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you curl the weights up and inhale as you lower them back down</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- sixth card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">PREACHER CURL</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/biceps/preacher curl.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Preacher Curls are a highly effective exercise for isolating and developing the biceps, particularly the biceps brachii. This exercise is performed on a preacher curl bench, which helps to stabilize the upper arms and eliminate momentum, allowing for a focused contraction of the biceps.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Preacher Curls
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Adjust the preacher curl bench to a comfortable height and select an appropriate weight.</li>
+                        <li>Sit on the bench with your chest against the pad and your arms extended over the pad.</li>
+                        <li>Grip the barbell (or dumbbells) with an underhand grip (palms facing up) and place your upper arms on the pad.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Ensure your arms are fully extended and your elbows are positioned at the edge of the pad.</li>
+                        <li>Keep your back straight, shoulders relaxed, and core engaged.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Curl the barbell or dumbbells up towards your shoulders by bending your elbows and contracting your biceps.</li>
+                        <li>Focus on squeezing your biceps at the top of the movement.</li>
+                        <li>Avoid using your shoulders or torso to lift the weight; keep the movement strictly within your arms.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower the weight back down to the starting position, fully extending your arms while maintaining control.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you curl the weight up and inhale as you lower it back down.</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+
+    
+</body>
+</html>

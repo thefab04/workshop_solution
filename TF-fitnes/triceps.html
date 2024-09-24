@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>triceps</title>
+    <link rel="icon" href="logo/icon.png">
+</head>
+
+<style>
+
+
+.header{
+    background-color: #800020a2;
+    padding: 20px 20px;
+    margin: 20px;
+    height: 40px;
+    margin-top: 40px;
+    border-radius: 30px
+    
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #fffdfdaa;
+    border-radius: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+    #header{
+    color:#800020;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 150px;
+}
+
+#subhead{
+    color:#800020;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 70px;
+    margin-left: 40px;
+}
+
+#subheadcard{
+    color:black;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 70px;
+    margin-left: 40px;
+}
+
+#para{
+    color:white;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 60%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 50px;
+    text-wrap:wrap;
+
+}
+
+.important{
+    color: white;
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    opacity: 60%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 28px;
+    padding-bottom: 30px;
+}
+
+
+.explain{
+    color:white;
+    opacity: 60%;
+    text-align:left;
+    margin-left: 25px;
+    float: right;
+    flex: 1;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+.explain p {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+
+.workouts{
+    margin-top: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 4px gray;
+}
+.image{
+    align-self: center;
+    background-repeat: no-repeat;
+    margin-left:80px;
+    flex-direction: row;
+    display: flex;
+    gap: 35px;
+}
+
+.card{
+
+    display: flex;
+    align-items: center;
+    border: 1px solid #800020; 
+    border-radius:10px;
+    padding: 10px;
+    max-width: 1860px;
+    
+}
+.section{
+    height: 3000px;
+    outline: 20px black solid;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 390px;
+  height: 554px;
+  perspective: 1000px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  writing-mode: vertical-rl;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.9);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, #800020 60%, rgba(255, 0, 0, 0.58) 88%,
+     rgb(43, 10, 231) 40%, rgba(0, 0, 0, 0.603) 48%);
+  color: rgb(0, 0, 0);
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+     bisque 40%, rgb(255, 185, 160) 78%);
+  color: white;
+  transform: rotateX(180deg);
+  
+}
+
+
+</style>
+
+<body>
+    <body  background="main_assets/final_background.png"></body>
+
+    <div class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">TF FITNESS</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="diet.html">DEIT</a></li>
+                <li><a href="upper.html">UPPER BODY</a></li>
+                <li><a href="lower.html">LOWER BODY</a></li>
+                <li><a href="core.html">CORE</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </div>
+
+
+    <h1 id="header"> UPPER BODY WORKOUTS</h1><br> 
+
+    
+    <h3 id="subhead">TRICEPS WORKOUTS</h3> 
+    <p id="para">Triceps workouts are important because they target the muscles at the back of the upper arms, which are responsible for pushing movements like pressing and extending the arms. Strong triceps are essential for exercises like push-ups, bench presses, and overhead presses, improving overall upper body strength. They help balance arm muscles by complementing the biceps, creating a proportionate and well-rounded look. Strengthening the triceps also supports the elbow joint, reducing the risk of injury during arm movements. Triceps workouts enhance functional strength for daily activities, such as pushing heavy objects or lifting overhead. Well-developed triceps improve athletic performance in sports that require pushing, like basketball or swimming. Training the triceps contributes to better arm definition, enhancing the appearance of the upper arms. Strong triceps also aid in improving shoulder stability, which is important for injury prevention. Finally, triceps exercises help improve muscle endurance, allowing you to perform longer and more effectively in both workouts and daily tasks.</p>
+
+    <h4 id="subhead">Importance</h4>
+    <div class="important"> 
+1.Increases Arm Strength -Triceps are crucial for pushing movements and overall arm power. <br>
+2.Enhances Arm Definition - Well-developed triceps give arms a toned, sculpted look.<br>
+3.Supports Functional Movements -Strengthens muscles for daily tasks like pushing, lifting, and extending.<br>
+4.Improves Upper Body Strength - Triceps are involved in compound lifts like bench presses and push-ups.<br>
+5.Balances Arm Development - Prevents imbalances by complementing biceps for symmetrical arms.<br>
+6.Aids in Shoulder Stability - Strong triceps support and stabilize the shoulder joint during movements.<br>
+7.Boosts Athletic Performance - Essential for sports that require strong pushing actions, like basketball or swimming.<br>
+8.Improves Lifting Capacity - Strengthening triceps enhances performance in pressing and overhead movements.<br>
+9.Reduces Risk of Injury - Strengthening the triceps helps protect the elbows from strain and injury.<br>
+10.Increases Metabolism - Engaging large muscle groups like the triceps boosts calorie burn.<br>
+</div>
+<div id="header">WORKOUTS</div>
+
+<section class="workouts">
+
+<!-- first card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">BENCH DIPS</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/triceps/bench dips.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Bench Dips are a bodyweight exercise that primarily targets the triceps, but they also engage the chest and shoulders to some extent. This exercise is performed using a bench or a stable surface and is effective for building upper body strength and muscle definition.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Bench Dips
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Sit on the edge of a bench or a sturdy platform with your hands placed beside your hips, fingers facing forward.</li>
+                        <li>Extend your legs out in front of you and place your heels on the floor. You can also keep your knees bent for a modified version.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Slide your hips off the edge of the bench, supporting your body weight with your hands.</li>
+                        <li>Keep your arms fully extended and your elbows locked.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Lower your body by bending your elbows, keeping them close to your sides. Lower yourself until your upper arms are parallel to the floor or slightly below.</li>
+                        <li>Push through your hands to extend your elbows and lift your body back to the starting position.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Fully extend your arms at the top of the movement, but avoid locking your elbows.</li>
+                        <li>Maintain a controlled pace throughout the exercise.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you push yourself up and inhale as you lower yourself down.</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- second card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">CABLE OVERHEAD EXTENSION</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/triceps/Cable Overhead Extension with Rope.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Cable Overhead Extension is an effective exercise for targeting the triceps, particularly the long head of the triceps muscle. This exercise helps in building strength and size in the triceps, which can contribute to better upper arm definition and overall upper body strength.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Cable Overhead Extension
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Attach a rope handle or a straight bar to the low pulley on a cable machine.</li>
+                        <li>Stand with your feet shoulder-width apart, facing away from the machine.</li>
+                        <li>Grab the handle or bar with both hands and hold it with an overhand grip (palms facing up) if using a bar, or with your palms facing each other if using a rope.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Step back slightly to create tension in the cable and raise the handle or bar overhead.</li>
+                        <li>oKeep your elbows close to your head and bend them to 90 degrees. Your arms should be fully extended above you.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Extend your arms fully by pushing the handle or bar upward and slightly back, focusing on contracting your triceps.</li>
+                        <li>Keep your elbows stationary and close to your head throughout the movement.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Slowly lower the handle or bar back to the starting position with control, allowing your elbows to bend and your triceps to stretch.</li>
+                        <li>Maintain a steady pace to keep tension on the muscles.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you extend your arms upward and inhale as you return to the starting position.</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- third card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">DUMBBELL OVER HEAD EXTENSION</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/triceps/dumbel overhead extension.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Dumbbell Overhead Extension is a triceps exercise that focuses on the long head of the triceps muscle. This exercise helps improve upper arm strength and definition. It can be performed either seated or standing, and it provides a great stretch and contraction for the triceps</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Dumbbell Overhead Extension
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Sit on a bench with back support and keep your feet flat on the floor.</li>
+                        <li>o	Hold a dumbbell with both hands, gripping it by one end with your palms facing upward and your thumbs wrapped around the handle.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Raise the dumbbell overhead with both hands, extending your arms fully.</li>
+                        <li>Keep your elbows close to your head and pointed forward.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Slowly lower the dumbbell behind your head by bending your elbows. Your forearms should move toward your upper arms.</li>
+                        <li>Keep your upper arms stationary and close to your head throughout the movement.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Extend your elbows to lift the dumbbell back to the starting position, fully contracting your triceps.</li>
+                        <li>Maintain a controlled pace during both the lowering and lifting phases.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you extend your arms upward and inhale as you lower the dumbbell behind your head.</li>
+                        
+                    </ul>
+
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- fouth card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">DUMBBELL OVER HEAD SINGLE HAND EXTENSION</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/triceps/dumbel overhead single hand extension.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Dumbbell Overhead Single-Arm Extension is a triceps exercise that targets the long head of the triceps muscle. This variation allows for a more focused contraction of each tricep and helps address any imbalances between the two sides of your body.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Dumbbell Overhead Single-Arm Extension
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Stand or sit on a bench with back support, holding a dumbbell in one hand.</li>
+                        <li>Hold the dumbbell with an overhand grip (palm facing upward) and extend your arm straight up overhead.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Keep your upper arm close to your head and your elbow pointed forward.</li>
+                        <li>Maintain a slight bend in your elbow to avoid locking it out.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Slowly lower the dumbbell behind your head by bending your elbow.</li>
+                        <li>Keep your upper arm stationary and close to your head throughout the movement.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Extend your elbow to lift the dumbbell back to the starting position, fully contracting your triceps.</li>
+                        <li>Maintain a controlled pace to maximize muscle engagement.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you extend your arm upward and inhale as you lower the dumbbell behind your head.</li>
+                        
+                    </ul>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- fifth card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">SKULL CRUSHER</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/triceps/skullcrusher.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Skull Crusher (also known as the Lying Triceps Extension) is a popular exercise for isolating the triceps, particularly the long head. It involves extending the arms while lying on a bench, which emphasizes the triceps and helps in building upper arm strength and definition.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Skull Crushers
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Lie on a flat bench with your feet flat on the floor and your back pressed against the bench.</li>
+                        <li>Hold a barbell with an overhand grip (palms facing toward your feet) and extend your arms straight up above your chest.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Keep your arms fully extended and your elbows locked.</li>
+                        <li>Your arms should be perpendicular to the bench, and your elbows should be directly above your shoulders.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Slowly lower the barbell towards your forehead by bending your elbows.</li>
+                        <li>Keep your upper arms stationary and avoid flaring your elbows out to the sides.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Extend your elbows to lift the barbell back to the starting position, fully contracting your triceps.</li>
+                        <li>Perform the movement in a controlled manner.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you extend your arms upward and inhale as you lower the barbell towards your forehead.</li>
+                        
+                    </ul>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<!-- sixth card workout -->
+
+<div class="card">
+    <div class="image">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h4 id="subheadcard">TRICEPS DIPS</h4>          
+                </div>
+                <div class="flip-card-back">
+                    <img src="gif/triceps/tricep dip.gif" height="654px">
+                    
+                </div>
+            </div>
+        </div>
+
+<div class="explain">
+        <p>Triceps Dips are a highly effective bodyweight exercise that primarily targets the triceps, but they also engage the chest and shoulders to a lesser extent. This exercise can be performed on parallel bars or using a bench and is excellent for building upper body strength and muscle definition.</p>
+            <div class="steps"><!--  how to perform  -->
+                <ol>How to Perform Triceps Dips
+                    <li><h4>SETUP</h4></li>
+                    <ul>
+                        <li>Position yourself between two parallel bars.</li>
+                        <li>Grab the bars with an overhand grip and lift your body off the ground, supporting yourself with your arms.</li>
+                    </ul>
+
+                    <li><h4>STARTING POSITION</h4></li>
+                    <ul>
+                        <li>Keep your body straight and your legs slightly bent if necessary.</li>
+                        <li>Your arms should be fully extended, and your elbows should be locked.</li>
+                    </ul>
+
+                    <li><h4>EXECUTION</h4></li>
+                    <ul>
+                        <li>Lower your body slowly by bending your elbows and leaning slightly forward.</li>
+                        <li>Lower yourself until your upper arms are parallel to the ground or slightly below.</li>
+                    </ul>
+
+                    <li><h4>RETURN TO POSITION</h4></li>
+                    <ul>
+                        <li>Push through your palms to extend your elbows and lift your body back to the starting position.</li>
+                        <li>Maintain a controlled pace throughout the movement.</li>
+                    </ul>
+
+                    <li><h4>BREATHING</h4></li>
+                    <ul>
+                        <li>Exhale as you push yourself up and inhale as you lower yourself down.</li>
+                        
+                    </ul>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+
+    
+</body>
+</html>

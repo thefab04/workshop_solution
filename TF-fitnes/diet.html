@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet_plans</title>
+    <link rel="icon" href="logo/icon.png">
+</head>
+
+<style>
+
+
+
+.header{
+    background-color: #800020a2;
+    padding: 20px 20px;
+    margin: 20px;
+    height: 40px;
+    margin-top: 40px;
+    border-radius: 30px
+    
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #fffdfdaa;
+    border-radius: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+
+#header{
+    color:#800020;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 5px;font-size: 90px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 200px;
+}
+#header1{
+    color:#a8002a;
+    stroke: aliceblue;
+    stroke-width: 5px;font-size: 90px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 60px;
+}
+
+#dieathead{
+    color:#800020;
+    stroke: aliceblue;
+    stroke-width: 5px;font-size: 90px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    margin-left: 40px;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 35px;
+}
+
+
+.impolist{
+    color: rgb(255, 255, 255);
+    stroke: aliceblue;
+    stroke-width: 5px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    opacity: 80%;
+    font-style: oblique;
+    font-stretch:expanded;
+    font-size: 28px;
+    padding-bottom: 30px;
+    margin-left: 70px;
+}
+
+#para{
+    font-family: Impact, Haettenschweiler, sans-serif;
+    text-align: center;
+    font-size:35px;
+    color: white;
+    opacity: 80%;
+}
+
+.diet{
+    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    margin: 20px;
+    font-size: 30px;
+    opacity: 80%;
+    margin-top: 30px;
+    border-radius: 30px;
+    margin-left: 50px;
+}
+
+.image1{
+    float: right;
+    margin-right: 130px;
+    opacity: 80%;
+}
+.image2{
+    float: left;
+    margin-right: 10px;
+    opacity: 80%;
+}
+.image3{
+    float: left;
+    margin-right: 10px;
+    margin-left: 160px;
+    opacity: 80%;
+}
+
+
+</style>
+
+
+<body background="main_assets/final_background.png">
+
+    <div class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">TF FITNESS</a>
+            </div>
+            <ul class="nav-links">
+                <!-- <li><a href="diet.html">DEIT</a></li> -->
+                <!-- <li><a href="upper.html">UPPER BODY</a></li> -->
+                <!-- <li><a href="lower.html">LOWER BODY</a></li> -->
+                <!-- <li><a href="core.html">CORE</a></li> -->
+                <li><a href="index.html">HOME</a>
+                <li><a href="first.html">WORKOUTS GUIDE</a>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </div>
+
+    <h1 id="header">DIET PLANS</h1>
+
+    <p id="para">A diet refers to the types of food and drink that a person or animal regularly consumes. It can also refer to a structured plan or regimen of eating and drinking, often followed for specific health reasons, such as weight management, medical conditions, or fitness goals. In broader terms, a diet can encompass cultural, ethical, or personal preferences, such as vegetarianism, veganism, or religious dietary restrictions.</p>
+
+    <h4 id="header1">IMPORTANCE OF DIET</h4>
+
+    <div class="image1">
+        <img src="diet/green leaf.png" height="180px">
+    </div>
+
+
+    <div class="impolist">
+1.Provides energy: A balanced diet supplies the necessary fuel for the body to perform daily activities.
+<br>
+2.Supports growth and development: Proper nutrition is crucial for the healthy growth of children and teens.
+<br>
+3.Boosts immunity: A nutrient-rich diet strengthens the immune system, helping fight infections and illnesses.
+<br>
+4.Promotes healthy weight: A balanced diet helps maintain or achieve a healthy weight, reducing the risk of obesity.
+<br>
+5.Improves mental health: Certain foods can positively impact mood, reduce stress, and enhance cognitive function.
+<br>
+6.Prevents chronic diseases: A healthy diet can reduce the risk of conditions like diabetes, heart disease, and cancer.
+<br>
+
+<div class="image2">
+    <img src="diet/chicken.png" height="200px">
+</div>
+
+7.Enhances digestion: A diet rich in fiber improves gut health and digestion.
+<br>
+8.Supports muscle function: Protein and other nutrients help build and repair muscles, improving strength and endurance.
+<br>
+9.Boosts longevity: Good nutrition contributes to a longer, healthier life by preventing age-related diseases.
+<br>
+10.Improves quality of life: A well-balanced diet supports overall well-being, leading to better physical and mental health.
+<br>
+    </div>
+
+    <br>
+
+
+<div class="diet">
+    <h3 id="header1">WEIGHT GAIN DIET</h3>
+
+<h4 id="dieathead">Morning (Upon Waking)</h5>
+
+•	1 glass of warm water with lemon and honey or a glass of whole milk <br>
+•	Handful of nuts (almonds, walnuts, or cashews) or soaked almonds (about 8-10)<br>
+
+<div class="image3">
+    <img src="diet/apple.png" height="450px" >
+</div>
+
+<h4 id="dieathead">Breakfast</h5>
+
+•	Option 1: 3-4 boiled eggs (or scrambled eggs) + 2 slices of whole grain toast <br>
+•	Option 2: Oatmeal made with whole milk, topped with banana, nuts, and honey<br>
+•	Option 3: Smoothie (blend whole milk, banana, peanut butter, oats, and whey protein)<br>
+<h4 id="dieathead">Mid-Morning Snack</h5>
+•	Option 1: Peanut butter sandwich on whole grain bread<br>
+•	Option 2: Greek yogurt with granola and honey<br>
+•	Option 3: A fruit (such as a banana or an apple) + a handful of mixed nuts or seeds<br>
+
+<h4 id="dieathead">Lunch</h5>
+•	Option 1: Grilled chicken breast or paneer (Indian cottage cheese) + brown rice + vegetables + a side of salad<br>
+•	Option 2: Whole grain pasta with chicken or tofu and mixed vegetables<br>
+•	Option 3: Chapati (Indian flatbread) with lentils (dal) + vegetable curry + yogurt<br>
+
+<div class="image1">
+    <img src="diet/egg.png" height="380px">
+
+</div>
+
+<h4 id="dieathead">Afternoon Snack</h5>
+•	Option 1: Protein smoothie (whole milk, banana, protein powder, and nut butter)<br>
+•	Option 2: Cottage cheese (paneer) or cheese with whole grain crackers<br>
+•	Option 3: Hard-boiled eggs or peanut butter on toast<br>
+<h4 id="dieathead">Evening Snack</h5>
+•	Option 1: Mixed nuts or trail mix with dried fruit<br>
+•	Option 2: Milkshake or smoothie with whole milk, fruits, and oats<br>
+•	Option 3: Fruit (mango, apple, banana) + peanut butter<br>
+
+<div class="image3">
+    <img src="diet/cashew.png" height="470px" >
+</div>
+
+<h4 id="dieathead">Dinner</h5>
+•	Option 1: Grilled salmon or other fatty fish with quinoa and steamed vegetables<br>
+•	Option 2: Lean beef or tofu stir-fried with vegetables and served with brown rice<br>
+•	Option 3: Chicken curry or chickpea curry with chapati or basmati rice<br>
+<h4 id="dieathead">Before Bed</h5>
+•	Option 1: A glass of warm milk (you can add honey or protein powder)<br>
+•	Option 2: Cottage cheese or Greek yogurt with some almonds or walnuts<br>
+•	Option 3: A banana or an apple with peanut butter<br>
+
+
+<h5 id="header1">Additional Tips for Healthy Weight Gain</h3>
+<ul>
+    <li>Increase Caloric Intake: Aim to eat 300-500 calories more than your daily caloric needs. This can be achieved by eating more frequent meals and snacks.</li>
+    <li>Focus on Protein: Include good sources of protein like eggs, chicken, fish, tofu, lentils, nuts, and dairy to support muscle growth.</li>
+    <li>Healthy Fats: Avocado, olive oil, nuts, seeds, and fatty fish are great sources of healthy fats that are calorie-dense.</li>
+    <li>Carbohydrates: Include whole grains, oats, quinoa, potatoes, sweet potatoes, and brown rice for sustained energy.</li>
+    <li>Liquid Calories: Milkshakes, smoothies, and protein shakes can add calories without making you feel overly full.</li>
+</ul>
+</div>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="diet">
+
+    <h3 id="header1">WEIGHT LOSS DIET</h3>
+
+    <h5 id="dieathead"> Morning (Upon Waking)</h5>
+•	1 glass of warm water with lemon (optional: add a teaspoon of honey for taste) or green tea to kickstart metabolism.<br>
+
+
+<div class="image1">
+    <img src="diet/almond.png" height="380px">
+
+</div>
+
+<h4 id="dieathead">Breakfast</h5>
+•	Option 1: Oatmeal made with water or almond milk, topped with fresh fruits (e.g., berries or banana slices) and a few nuts.<br>
+•	Option 2: 2 boiled or scrambled eggs with a slice of whole-grain toast and a small portion of avocado.<br>
+•	Option 3: Greek yogurt (unsweetened) with chia seeds, flax seeds, and a handful of mixed berries.<br>
+<h4 id="dieathead">Mid-Morning Snack</h5>
+•	Option 1: A handful of almonds (about 8-10) or walnuts.<br>
+•	Option 2: 1 apple or 1 orange.<br>
+•	Option 3: 1 cucumber or carrot sticks with hummus.<br>
+
+<div class="image3">
+    <img src="diet/carrot.png" height="470px" >
+</div>
+
+
+<h4 id="dieathead">Lunch</h5>
+•	Option 1: Grilled chicken breast or tofu with a large mixed salad (include leafy greens, cucumbers, tomatoes, and a light olive oil dressing) + 1 whole wheat chapati or a small portion of brown rice.<br>
+•	Option 2: Quinoa or brown rice bowl with chickpeas, sautéed vegetables, and a side of Greek yogurt or a small portion of paneer.<br>
+•	Option 3: Lentil soup with a side salad (green vegetables, cucumber, tomatoes, and olive oil dressing) and a whole grain slice of bread.<br>
+<h4 id="dieathead">Afternoon Snack</h5>
+•	Option 1: A handful of mixed nuts or seeds.<br>
+•	Option 2: 1 small banana or a pear with 1 tablespoon of peanut butter.<br>
+•	Option 3: A green smoothie (blend spinach, cucumber, a small apple, and water or coconut water).<br>
+
+<div class="image1">
+    <img src="diet/peanut.png" height="380px">
+
+</div>
+
+
+<h4 id="dieathead">Evening Snack (Optional)</h5>
+•	Option 1: A handful of roasted chickpeas or air-popped popcorn.<br>
+•	Option 2: 1 hard-boiled egg.<br>
+•	Option 3: 1 cup of green tea or herbal tea.<br>
+
+<h4 id="dieathead">Dinner</h5>
+•	Option 1: Grilled fish (salmon or tilapia) or tofu with steamed vegetables (broccoli, cauliflower, or green beans) and a small portion of quinoa or brown rice.<br>
+•	Option 2: Vegetable stir-fry with tofu or lean chicken breast, served with a small portion of brown rice or whole-grain noodles.<br>
+•	Option 3: Mixed vegetable soup with a small serving of grilled paneer or boiled lentils.<br>
+<h4 id="dieathead">Before Bed (Optional Snack)</h5>
+•	Option 1: A small bowl of Greek yogurt (unsweetened).<br>
+•	Option 2: A handful of mixed berries or a small apple.<br>
+•	Option 3: 1 cup of chamomile tea.<br>
+
+
+<h5 id="header1">Additional Tips for Healthy Weight Loss</h3>
+<ul>
+    <li>Portion Control: Focus on portion sizes and eat slowly to avoid overeating.</li>
+    <li>High-Protein: Incorporate high-protein foods (e.g., chicken, fish, tofu, beans) to keep you fuller longer and support muscle maintenance.</li>
+    <li>Healthy Fats: Include sources of healthy fats such as avocado, olive oil, nuts, and seeds in moderate amounts.</li>
+    <li>Fiber-Rich Foods: Whole grains, vegetables, fruits, and legumes are rich in fiber and help promote satiety.</li>
+    <li>Stay Hydrated: Drink plenty of water throughout the day (8-10 glasses) to help with digestion and control hunger.</li>
+    <li>Avoid Sugary Drinks and Processed Foods: Limit the intake of sugary beverages and highly processed, calorie-dense foods.</li>
+    <li>Regular Physical Activity: Pair the diet with regular physical exercise, such as walking, strength training, or yoga.</li>
+    
+</ul>
+
+</div>
+
+</body>
+</html>
